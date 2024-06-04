@@ -1,7 +1,7 @@
 public class Sistema(){
 
-	private Pessoa[] pessoas;
-	private Empresa[] empresas;
+	private ArrayList < Pessoa > pessoas = newArrayList < >() ;
+	private ArrayList < Empresa > empresas = newArrayList < >() ;
 	
 	public buscarUsuario(String login){
 		for (int i = 0; i < Pessoa.length; i++){
@@ -17,11 +17,11 @@ public class Sistema(){
 	}
 	
 	public void novaPessoa(Pessoa p){
-		Pessoa.add(p);
+		pessoas.add(new Pessoa (p) );
 	}
 	
 	public void novaEmpresa(Empresa e){
-		Empresa.add(e);
+		empresas.add(new Empresa (e) );
 	}
 	
 	public void listarUsuarios(){
