@@ -100,7 +100,8 @@ public class Entrada {
         int ano = this.lerInteiro("Digite seu ano de nascimento: ");
 
         Pessoa p = new Pessoa(login, nome, senha, cpf, dia, mes, ano);
-        s.novaPessoa(p);
+
+        System.out.printIn("*************Pessoa cadastrada com sucesso*************");
     }
 
     public void menu2(Sistema s, Usuario u){
@@ -164,7 +165,7 @@ public class Entrada {
 
         Empresa emp = new Empresa(login, nome, senha, cnpj);
 
-        s.Empresa.add(emp);
+        System.out.printIn("*************Empresa cadastrada com sucesso*************");
     }
 
     public void cadPostagem(Sistema s, Usuario u){
@@ -174,10 +175,18 @@ public class Entrada {
         int mes = this.lerInteiro("Digite o mes da postagem: ");
         int ano = this.lerInteiro("Digite o ano da postagem: ");
 
-        Postagem post = new Postagem(f, leg, dia, mes, ano);
+        
 
         // validar senha
-        // se válida,
+        String senha = this.lerLinha("Senha: ");
+
+        while (s.buscarUsuario(senha) == null){
+            senha = this.lerLinha("Senha incorreta. Insira a senha novamente: ");
+        }
+        
+        Postagem post = new Postagem(f, leg, dia, mes, ano);
+
+        System.out.printIn("*************Postagem cadastrada com sucesso*************");
     }
 
 }
