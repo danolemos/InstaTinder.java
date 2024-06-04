@@ -26,7 +26,6 @@ public class Usuario(){
         legenda = legenda;
         d = hoje;
 
-	int permissao =     
 	if (senha == this.senha){
 
         // inserir na lista de posts //
@@ -36,12 +35,12 @@ public class Usuario(){
     }
 
     void seguir(Usuario u){
-	seguindo.add(u);
+	    seguindo.add(u);
     }
 
     void mostrarPosts( ){
-	for (int i = 0; i < length ; i ++) {
-		System.out.println(p.get(Postagens[i]));
+        for (int i = 0; i < length ; i ++) {
+            System.out.println(p.get(Postagens[i]));
 	}
     }
 
