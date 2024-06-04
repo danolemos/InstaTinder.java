@@ -1,16 +1,18 @@
+import java.util.ArrayList;
+
 public class Sistema(){
 
 	private ArrayList < Pessoa > pessoas = newArrayList < >() ;
 	private ArrayList < Empresa > empresas = newArrayList < >() ;
 	
 	public buscarUsuario(String login){
-		for (int i = 0; i < Pessoa.length; i++){
+		for (int i = 0; i < pessoas.size(); i++){
 			if (Pessoa.login == login){
 				return Pessoa;
 			}
 		}
 		
-		for (int i = 0; i < Empresa.length; i++){
+		for (int i = 0; i < empresas.size(); i++){
 			if (Empresa.login == login){
 				return Empresa;
 		}
