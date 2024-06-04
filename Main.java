@@ -6,17 +6,17 @@ public class Main {
 
     int opc;
 
-    opc = menu2(s, u);
+    opc = menu1(s, u);
 
     while(opc != 0)
 
     {
         if (opc == 1) {
-            seguir();
+            cadPessoa(s);
         } else if (opc == 2) {
-            cadPostagem(s, u);
+            cadEmpresa(s);
         } else if (opc = 3) {
-            mostrarFeed();
+            login(s);
         }
     }
 }
