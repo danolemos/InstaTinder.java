@@ -22,10 +22,12 @@ public class Usuario(){
 
         // criar postagem //
         Postagem p = new Postagem;
-        foto = this.foto;
-        legenda = this.legenda;
-        hoje = this.hoje;
-        senha = this.senha;
+        foto = foto;
+        legenda = legenda;
+        d = hoje;
+
+	int permissao =     
+	if (senha == this.senha){
 
         // inserir na lista de posts //
         posts.add(p);
@@ -33,7 +35,7 @@ public class Usuario(){
 
     }
 
-    void seguir(u : Usuario){
+    void seguir(Usuario u){
 	seguindo.add(u);
     }
 
