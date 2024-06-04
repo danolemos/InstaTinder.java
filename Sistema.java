@@ -1,7 +1,7 @@
-private class Sistema(){
+public class Sistema(){
 
-	private pessoas : Pessoa[ ]
-	private empresas : Empresa[ ]
+	private Pessoa[] pessoas;
+	private Empresa[] empresas;
 	
 	public buscarUsuario(String login){
 		for (int i = 0; i < Pessoa.length; i++){

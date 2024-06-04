@@ -7,18 +7,16 @@ public class Usuario(){
     Pessoa[] interessados;
     Postagem[] posts;
 
-    boolean validarAcesso(pwd : String){
-        return true;
-        return false;
+    boolean validarAcesso(String pwd){
+        //return true;
+        //return false;
     }
 
-    String toString(){
+    public String toString(){
         return this.nome + this.login;
     }
 
-    void postar(foto : String, legenda : String, hoje : Data, senha : String){
-        String foto, legenda, senha;
-        Data hoje;
+    void postar(String foto, String legenda, Data hoje, String senha){
 
         // criar postagem //
         Postagem p = new Postagem;

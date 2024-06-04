@@ -1,4 +1,4 @@
-public class Pessoa extends Usuario(){
+public class Pessoa extends Usuario{
         String cpf, bio;
         char sexo;
         Data nasc;

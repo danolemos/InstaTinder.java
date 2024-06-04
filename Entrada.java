@@ -102,81 +102,89 @@ public class Entrada {
         Pessoa p = new Pessoa(login, nome, senha, cpf, dia, mes, ano);
         s.novaPessoa(p);
     }
-    
-    public int menu2(Sistema s, Usuario u){
-    	String msg = "*********************\n" +
+
+    public void menu2(Sistema s, Usuario u){
+        String msg = "*********************\n" +
                 "Escolha uma opção:\n" +
                 "1) Seguir alguém.\n" +
                 "2) Fazer uma postagem.\n" +
                 "3) Exibir meu feed.\n" +
                 "0) Sair.\n";
-	
-    }
-    
-    public void login(Sistema s){
-    	String login = this.lerLinha("Login: ");
-    	
-    	if (s.buscarUsuario(login) == null){
-    		System.out.println("ERRO: Login inexistente");
-    	}
-    	
-    	String senha = this.lerLinha("Senha: ");
-    	
-    	while (s.buscarUsuario(senha) == null){
-    		senha = this.lerLinha("Senha incorreta. Insira a senha novamente: ");
-    	}
 
-	String opcao = menu2(s, u); // ???????????????????????????????????????????
-    	
-    	while (opcao != 0){ // ??????????????????????????????????????????
-    		if (opcao == 1){
-    			// exibe todos os usuários
-    			for (int i = 0; i < Usuario.length; i++){
-    				System.out.println(Usuario[i]);
-    			}
-    			
-    			// pergunta qual ele quer seguir ????????????????????????????????????
-    			String escolhido = this.lerLinha("Quem deseja seguir?\n");
-    			
-    			// cria as conexões necessárias ?????????????????????????????????????
-    			u.seguir(escolhido);
-    			
-    		}
-    		
-    		if (opcao == 2){
-    			cadPostagem(s, u);
-    		}
-    		
-    		if (opcao == 3){
-    			// exibir seu feed
-    			for (int i = 0; 
-    				u.
-    		}
-    	}
+        int op = this.lerInteiro(msg);
+
+        while (op < 0 || op > 3) {
+            System.out.println("Opção inválida. Tente novamente: ");
+            op = this.lerInteiro(msg);
+        }
+
+        return op;
     }
-    
+
+    public void login(Sistema s){
+        String login = this.lerLinha("Login: ");
+
+        if (s.buscarUsuario(login) == null){
+            System.out.println("ERRO: Login inexistente");
+        }
+
+        String senha = this.lerLinha("Senha: ");
+
+        while (s.buscarUsuario(senha) == null){
+            senha = this.lerLinha("Senha incorreta. Insira a senha novamente: ");
+        }
+
+        String opcao = menu2(s, u); // ???????????????????????????????????????????
+
+        while (opcao != 0){ // ??????????????????????????????????????????
+            if (opcao == 1){
+                // exibe todos os usuários
+                for (int i = 0; i < Usuario.length; i++){
+                    System.out.println(Usuario[i]);
+                }
+
+                // pergunta qual ele quer seguir ????????????????????????????????????
+                String escolhido = this.lerLinha("Quem deseja seguir?\n");
+
+                // cria as conexões necessárias ?????????????????????????????????????
+                u.seguir(escolhido);
+
+            }
+
+            if (opcao == 2){
+                cadPostagem(s, u);
+            }
+
+            if (opcao == 3){
+                // exibir seu feed
+                for (int i = 0;
+                     u;
+            }
+        }
+    }
+
     public void cadEmpresa(Sistema s){
-    	String login = this.lerLinha("Insira o login da empresa: ");
-    	String nome = this.lerLinha("Insira o nome da empresa: ");
-    	String senha = this.lerLinha("Insira uma senha: ");
-    	String cnpj = this.lerLinha("Insira o CNPJ da empresa: ");
-    	
-    	Empresa emp = new Empresa(login, nome, senha, cnpj);
-    	
-    	s.Empresa.add(emp);
+        String login = this.lerLinha("Insira o login da empresa: ");
+        String nome = this.lerLinha("Insira o nome da empresa: ");
+        String senha = this.lerLinha("Insira uma senha: ");
+        String cnpj = this.lerLinha("Insira o CNPJ da empresa: ");
+
+        Empresa emp = new Empresa(login, nome, senha, cnpj);
+
+        s.Empresa.add(emp);
     }
-    
-	public void cadPostagem(Sistema s, Usuario u){
-		String f = this.lerLinha("Insira a foto: ");
-		String leg = this.lerLinha("Digite uma legenda: ");
-		int dia = this.lerInteiro("Digite o dia da postagem: ");
-		int mes = this.lerInteiro("Digite o mes da postagem: ");
-		int ano = this.lerInteiro("Digite o ano da postagem: ");
-			
-		Postagem post = new Postagem(f, leg, dia, mes, ano);
-		
-		// validar senha
-		// se válida, 
-	}
+
+    public void cadPostagem(Sistema s, Usuario u){
+        String f = this.lerLinha("Insira a foto: ");
+        String leg = this.lerLinha("Digite uma legenda: ");
+        int dia = this.lerInteiro("Digite o dia da postagem: ");
+        int mes = this.lerInteiro("Digite o mes da postagem: ");
+        int ano = this.lerInteiro("Digite o ano da postagem: ");
+
+        Postagem post = new Postagem(f, leg, dia, mes, ano);
+
+        // validar senha
+        // se válida,
+    }
 
 }

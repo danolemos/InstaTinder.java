@@ -1,23 +1,19 @@
-public class Data(){
+public class Data {
     int dia, mes, ano;
 
-    String toString(){
-        return Integer.parseln(this.dia) + "/" + Integer.parseln(this.mes) + "/" + Integer.parseln(this.ano);
+    public String toString(){
+        return Integer.parseInt(String.valueOf(this.dia)) + "/" + Integer.parseInt(String.valueOf(this.mes)) + "/" + Integer.parseInt(String.valueOf(this.ano));
     }
 
-    boolean anterior(data1, data2){ // ?????????????????
-        if (ano1 < ano2){return true;}
+    boolean anterior(Data data1, Data data2){ // ?????????????????
+        if (data1.ano < data2.ano){return true;}
         else{
-        	if (mes1 < mes2) {
+        	if (data1.mes < data2.mes) {
         		return true;
         	}
         	else{
-        		if (dia1 < dia2){
-        			return true;
-        		}
-        		else{return false;}
+                return data1.dia < data2.dia;
         	}
         }
-        return false;
     }
 }
