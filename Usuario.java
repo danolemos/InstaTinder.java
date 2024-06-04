@@ -3,9 +3,11 @@ import java.util.ArrayList;
 public class Usuario(){
     String login, nome, senha;
     Localidade cidade;
-    Usuario[] seguindo, seguidores;
-    Pessoa[] interessados;
-    Postagem[] posts;
+
+	ArrayList < Usuario > seguindo = newArrayList < >();
+	ArrayList < Usuario > seguidores = newArrayList < >() ;
+	ArrayList < Pessoa > interessados = newArrayList < >() ;
+	ArrayList < Postagem > posts = newArrayList < >() ;
 
     boolean validarAcesso(String pwd){
         //return true;
