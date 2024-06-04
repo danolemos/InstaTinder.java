@@ -5,7 +5,7 @@ public class Data {
         return Integer.parseInt(String.valueOf(this.dia)) + "/" + Integer.parseInt(String.valueOf(this.mes)) + "/" + Integer.parseInt(String.valueOf(this.ano));
     }
 
-    boolean anterior(Data data1, Data data2){ // ?????????????????
+    boolean anterior(Data data1, Data data2){
         if (data1.ano < data2.ano){return true;}
         else{
         	if (data1.mes < data2.mes) {
